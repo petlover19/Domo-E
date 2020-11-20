@@ -18,7 +18,9 @@ var handleDomo = function handleDomo(e) {
 };
 
 var DomoForm = function DomoForm(props) {
-  return /*#__PURE__*/React.createElement("form", {
+  return /*#__PURE__*/React.createElement("div", {
+    id: "domoNew"
+  }, /*#__PURE__*/React.createElement("form", {
     id: "domoForm",
     name: "domoForm",
     onSubmit: handleDomo,
@@ -46,6 +48,13 @@ var DomoForm = function DomoForm(props) {
     type: "text",
     name: "power",
     placeholder: "Domo's Power"
+  }), /*#__PURE__*/React.createElement("label", {
+    htmlFor: "level"
+  }, "Level: "), /*#__PURE__*/React.createElement("input", {
+    id: "domoLevel",
+    type: "number",
+    name: "level",
+    placeholder: "1"
   }), /*#__PURE__*/React.createElement("input", {
     type: "hidden",
     name: "_csrf",
@@ -54,7 +63,7 @@ var DomoForm = function DomoForm(props) {
     className: "makeDomoSubmit",
     type: "submit",
     value: "Make Domo"
-  }));
+  })));
 };
 
 var DomoList = function DomoList(props) {
@@ -81,7 +90,9 @@ var DomoList = function DomoList(props) {
       className: "domoAge"
     }, "Age: ", domo.age, " "), /*#__PURE__*/React.createElement("h3", {
       className: "domoPower"
-    }, "Power: ", domo.power, " "));
+    }, "Power: ", domo.power, " "), /*#__PURE__*/React.createElement("h4", {
+      className: "domoLevel"
+    }, "Level: ", domo.level, " "));
   });
   return /*#__PURE__*/React.createElement("div", {
     className: "domoList"

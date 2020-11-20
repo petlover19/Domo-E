@@ -18,6 +18,7 @@ const handleDomo = (e) => {
 
 const DomoForm = (props) => {
     return ( 
+    <div id="domoNew">
     <form id="domoForm" 
         name="domoForm" 
         onSubmit={handleDomo} 
@@ -34,8 +35,10 @@ const DomoForm = (props) => {
         <input type="hidden" name="_csrf" value={props.csrf}/>
         <input className="makeDomoSubmit" type="submit" value="Make Domo"/>      
     </form >
+    </div>
     );
 };
+
 
 const DomoList=function(props){
     if(props.domos.length===0){
